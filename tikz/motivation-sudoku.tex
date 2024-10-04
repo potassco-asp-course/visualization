@@ -1,48 +1,40 @@
 \begin{tikzpicture}[]
-
     \uncover<1->{
-
         \node[] (user_label) at (0.5,3.7) {\scriptsize{ASP Developer}};
-        \node[inner sep=0pt, opacity=.3] (user) at (0.5,3) {\includegraphics[width=.1\textwidth]{img/user-yellow.png}};
+        \node[inner sep=0pt, opacity=.3] (user) at (0.5,3) {\includegraphics[width=.1\textwidth]{images/user-yellow.png}};
     }
-
     \only<1>{
         \node[] (problem_label) at (5,4) {\footnotesize{A problem}};
         \node[subsection,font=\scriptsize] (problem) at(5,3) {\textit{``A sudoku puzzle''}};
     }
-
     \only<2,3,4,5->{
         \node[] (lst-i) at(3.63,4.5) {
-            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku/sudoku-instance.lp}
+            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku-instance.lp}
         };
     }
     \only<3,4,5->{
         \node[] (lst-e) at(4.7,3) {
-            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku/sudoku-encoding.lp}
+            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku-encoding.lp}
         };
         \draw[arrw] (user)  -- (lst-e);
     }
-
     \only<4>{
         \node[] (clingo-out) at(10.5,3) {
-        \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=3cm]{listings/sudoku/sudoku-out.txt}
+        \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=3cm]{listings/sudoku-out.txt}
         };
         \draw[arrw] (lst-e.east) -- (clingo-out);
 
     }
-
     \only<5->{
         \node[] (ig_label) at (11,4) {\footnotesize{Image}};
-        \node[inner sep=0pt, opacity=.3] (ig) at (11,3) {\includegraphics[width=.08\textwidth]{img/img-yellow.png}};
+        \node[inner sep=0pt, opacity=.3] (ig) at (11,3) {\includegraphics[width=.08\textwidth]{images/img-yellow.png}};
     }
-
     \only<6>{
         \node[system] (clingraph) at (9,3) {\clingraph};
         \draw[arrw-system] (clingraph) -- (ig);
         \draw[arrw-system,-] (lst-e) -- (clingraph);
 
     }
-
     \uncover<7->{
         \node[state] (model) at (0.5,6.2) {Model};
         \draw[arrw-system] (model) -- (user_label);
@@ -52,15 +44,13 @@
         \node[uiencoding] (viz-file) at(4.7,1) {Visualization encoding};
         \draw[arrw-system] (user) |- (viz-file.west) ;
     }
-
     \only<9->{
         \node[uiencoding] (viz-facts) at(8.7,1) {\texttt{graph/1}\\\texttt{node/2}\\\texttt{edge/1}\\\texttt{attr/4}};
         \draw[arrw-system] (user) |- (viz-file.west) ;
         \draw[arrw-system] (viz-file.east) -- (viz-facts.west);
         \draw[arrw-system] (viz-facts.east)  -| (ig.south);
     }
-
     \uncover<10>{
-        \node[inner sep=0pt] (ui) at (11,3.7) {\includegraphics<10>[width=0.2\textwidth]{img/clingraph/sudoku.png}};
+        \node[inner sep=0pt] (ui) at (11,3.7) {\includegraphics<10>[width=0.2\textwidth]{images/sudoku.png}};
     }
 \end{tikzpicture}
