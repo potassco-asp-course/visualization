@@ -1,0 +1,106 @@
+\tikzset{
+    grid/.style={
+        gray,
+        very thin,
+        opacity=0.1
+    },
+    element/.style={
+        font=\scriptsize,
+%        fill=stylecyan,
+%        draw=black,
+        draw=yellow,
+        inner sep=5pt,
+        align={center}
+    },
+    encoding/.style={
+        element % ,
+%        fill=stylepink
+    },
+    uiencoding/.style={
+        element % ,
+%        fill=styleorange!30
+    },
+    subsection/.style={
+        element,
+%        fill=stylelightblue,
+        font=\scriptsize,
+        draw=gray
+    },
+    section/.style={
+        element,
+%       fill=stylecyan,
+        draw=gray
+    },
+    input-file/.style={
+        element,
+%        fill=styleorange!30,
+        font=\tiny,
+        align={left},
+        inner sep=2pt
+    },
+    ctl/.style={
+        section,
+%        fill=stylepurple,
+        draw=gray
+    },
+    state/.style={
+        section,
+%        fill=stylelightgreen,
+        draw=gray
+    },
+    section-title/.style={
+        font=\scriptsize
+    },
+    subsection-title/.style={
+        font=\scriptsize,
+        align={center}
+    },
+    section-info/.style={
+        font=\tiny,
+        align={left}
+    },
+    arrw/.style={
+%        styleblue,
+         yellow,
+        font=\tiny,
+        -latex
+    },
+    subarrw/.style={
+%        styleblue,
+         yellow,
+        opacity=0.5,
+        densely dotted,
+        -latex
+    },
+    arrw-system/.style={
+        arrw,
+        dotted,
+%        black
+         yellow
+    },
+    system/.style={
+%        draw=black,
+        draw=yellow,
+        double,
+        rounded corners,
+        font=\scriptsize,
+        inner sep=5pt,
+        align={center} % ,
+%        fill=stylepurple!50
+    },
+    approach/.style={
+        fill=gray!10,
+        inner sep=5pt,
+        align={center}
+    },
+    action/.style={
+        double,
+        rounded corners,
+        font=\tiny,
+        fill=gray!50,
+%        draw=black,
+        draw=yellow,
+        inner sep=3pt,
+        align={center}
+    }
+}
