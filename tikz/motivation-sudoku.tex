@@ -9,18 +9,18 @@
     }
     \only<2,3,4,5->{
         \node[] (lst-i) at(3.63,4.5) {
-            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku-instance.lp}
+            \lstinputlisting[basicstyle=\tiny\ttfamily,frame=single,linewidth=5.5cm,columns=fullflexible]{listings/sudoku-instance.lp}
         };
     }
     \only<3,4,5->{
         \node[] (lst-e) at(4.7,3) {
-            \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=5.5cm]{listings/sudoku-encoding.lp}
+            \lstinputlisting[basicstyle=\tiny\ttfamily,frame=single,linewidth=5.5cm,columns=fullflexible]{listings/sudoku-encoding.lp}
         };
         \draw[arrw] (user)  -- (lst-e);
     }
     \only<4>{
         \node[] (clingo-out) at(10.5,3) {
-        \lstinputlisting[basicstyle=\tiny\ttfamily,linewidth=3cm]{listings/sudoku-out.txt}
+        \lstinputlisting[basicstyle=\tiny\ttfamily,frame=single,linewidth=3cm,columns=fullflexible]{listings/sudoku-out.txt}
         };
         \draw[arrw] (lst-e.east) -- (clingo-out);
 
@@ -41,7 +41,7 @@
 
     }
     \uncover<8->{
-        \node[uiencoding] (viz-file) at(4.7,1) {Visualization encoding};
+        \node[state] (viz-file) at(4.7,1) {Visualization encoding}; % uiencoding
         \draw[arrw-system] (user) |- (viz-file.west) ;
     }
     \only<9->{
